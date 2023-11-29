@@ -2,6 +2,10 @@ const asyncHandler = require("express-async-handler");
 const Product = require("../models/productModels");
 const mongodb = require("mongodb");
 
+const home  = asyncHandler(async(req, res)=>{
+  res.json("Hello")
+})
+
 const getProducts = asyncHandler(async (req, res) => {
   const products = await Product.find();
   res.status(200).json({ products });
@@ -96,4 +100,5 @@ module.exports = {
   findprice,
   finddata,
   updateManyProduct,
+  home
 };

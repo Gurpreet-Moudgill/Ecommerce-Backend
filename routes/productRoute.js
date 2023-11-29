@@ -13,6 +13,7 @@ const {
   finddata,
   updateManyProduct,
   findnew,
+  home
 } = require("../controllers/productControllers");
 
 const {
@@ -24,6 +25,7 @@ const {
   findDetail,
 } = require("../controllers/loginControllers");
 
+router.route("/").get(home);
 router.route("/get").get(getProducts);
 router.route("/get/find").get(getProductsfind);
 router.route("/get/price").get(findprice);
